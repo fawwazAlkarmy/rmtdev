@@ -1,15 +1,9 @@
-import BookmarksButton from "./BookmarksButton";
-import Logo from "./Logo";
-import SearchForm from "./SearchForm";
+import { PropsWithChildren } from "react";
 
-export default function Header() {
-  return (
-    <header className="header">
-      <div className="header__top">
-        <Logo />
-        <BookmarksButton />
-      </div>
-      <SearchForm />
-    </header>
-  );
+export default function Header({ children }: PropsWithChildren) {
+  return <header className="header">{children}</header>;
+}
+
+export function HeaderTop({ children }: PropsWithChildren) {
+  return <div className="header__top">{children}</div>;
 }

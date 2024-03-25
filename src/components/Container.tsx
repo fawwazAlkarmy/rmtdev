@@ -1,11 +1,5 @@
-import JobItemContent from "./JobItemContent";
-import Sidebar from "./Sidebar";
+import { PropsWithChildren } from "react";
 
-export default function Container() {
-  return (
-    <div className="container">
-      <Sidebar />
-      <JobItemContent />
-    </div>
-  );
+export default function Container({ children }: PropsWithChildren) {
+  return <div className="container">{children}</div>;
 }
