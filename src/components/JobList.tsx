@@ -1,4 +1,5 @@
 import JobListItem from "./JobListItem";
+import Spinner from "./Spinner";
 
 interface IJobItem {
   id: number;
@@ -12,14 +13,15 @@ interface IJobItem {
 
 type Props = {
   jobItems: IJobItem[];
+  isLoading: boolean;
 };
 
-export function JobList({ jobItems }: Props) {
+export function JobList({ jobItems, isLoading }: Props) {
   return (
     <ul className="job-list">
-      {jobItems.map((jobItem: any) => (
-        <JobListItem jobItem={jobItem} />
-      ))}
+      {isLoading && <Spinner />}
+      {!isLoading &&
+        jobItems.map((jobItem: any) => <JobListItem jobItem={jobItem} />)}
     </ul>
   );
 }
