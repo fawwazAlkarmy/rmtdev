@@ -1,15 +1,6 @@
+import { IJobItem } from "../lib/types";
 import JobListItem from "./JobListItem";
 import Spinner from "./Spinner";
-
-interface IJobItem {
-  id: number;
-  title: string;
-  company: string;
-  badgeLetters: string;
-  date: string;
-  relevanceScore: number;
-  daysAgo: number;
-}
 
 type Props = {
   jobItems: IJobItem[];
@@ -21,7 +12,7 @@ export function JobList({ jobItems, isLoading }: Props) {
     <ul className="job-list">
       {isLoading && <Spinner />}
       {!isLoading &&
-        jobItems.map((jobItem: any) => <JobListItem jobItem={jobItem} />)}
+        jobItems.map((jobItem: IJobItem) => <JobListItem jobItem={jobItem} />)}
     </ul>
   );
 }

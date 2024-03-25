@@ -1,14 +1,5 @@
+import { IJobItem } from "../lib/types";
 import BookmarkIcon from "./BookmarkIcon";
-
-interface IJobItem {
-  id: number;
-  title: string;
-  company: string;
-  badgeLetters: string;
-  date: string;
-  relevanceScore: number;
-  daysAgo: number;
-}
 
 type Props = {
   jobItem: IJobItem;
