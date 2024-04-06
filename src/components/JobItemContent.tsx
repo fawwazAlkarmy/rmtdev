@@ -6,7 +6,13 @@ export default function JobItemContent() {
   const { activeId } = useActiveId();
   const { jobItem, loading } = useJobItem(activeId);
   if (loading) {
-    return <Spinner />;
+    return (
+      <section className="job-details">
+        <div>
+          <Spinner />
+        </div>
+      </section>
+    );
   }
 
   if (!jobItem) {
