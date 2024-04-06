@@ -41,6 +41,7 @@ export const useJobItems = (searchText: string) => {
   const [loading, setLoading] = useState(false);
 
   const jobItemsSliced = jobItems.slice(0, 7);
+  const totalNumbersOfResults = jobItems.length;
 
   useEffect(() => {
     if (!searchText) return;
@@ -53,5 +54,5 @@ export const useJobItems = (searchText: string) => {
     };
     fetchData();
   }, [searchText]);
-  return { jobItemsSliced, loading };
+  return { jobItemsSliced, totalNumbersOfResults, loading };
 };
